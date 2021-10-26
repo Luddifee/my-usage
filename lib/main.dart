@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:my_learning/pages/home.dart';
+import 'package:my_learning/prefs.dart';
 import 'package:my_learning/theme.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Prefs.init();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
